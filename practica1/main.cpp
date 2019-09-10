@@ -30,11 +30,22 @@ bool esPalindromo (int num){
         return false;
 }
 int calcularFib (int num){
-    int n1,n2,cont;
-    n1=0;
-    n2=1;
-    while ()
-    return resultado;
+    if (num==0)
+        return 0;
+    else{
+        if (num==1)
+            return 1;
+        else{
+            int rep = num-1;
+            int a=0;
+            int b=1;
+            for(int i=0;i<rep;i++){
+                b=a+b;
+                a=b-a;
+            }
+            return b;
+        }
+    }
 }
 bool esNumero (char c){
     int num=static_cast<int>(c);
@@ -91,12 +102,13 @@ int main()
     return 0;
     */
 
-    //E4
+    /*//E4
     int n;
     cout<<"Ingrese el numero"<<endl;
     cin>>n;
     cout<<calcularFib(n)<<endl;
     return 0;
+    */
 
     /*//E5
     char c;
