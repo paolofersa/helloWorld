@@ -50,16 +50,42 @@ void bubbleSort (int arr[], int tam){
 }
 
 void insertionSort (int arr[], int tam){
-    for (int i=0; i < tam-1; i++){
-        for (int j=0; arr[i+1] < arr[i-j]; j++){
-            if (arr[i+1]<arr[i-j])
-                swap(arr[i+1],arr[i-j]);
+    int valorTemporal;
+    for (int i=1; i < tam; i++){
+        valorTemporal = arr[i];
+        int j;
+        //en caso el valor evaluado sea inferior al de la izquierda y aun haya valores que evaluar
+        for (j=i-1; j>=0 && arr[j] > valorTemporal; j--){
+            arr[j+1] = arr[j];
         }
+        arr[j+1] = valorTemporal;
     }
 }
 
-void quickSort (int arr[], int tam){
+int particion(int arr[], int izquierda, int derecha){
+    int pivote = arr[derecha];
+    int indice = izquierda-1;
+    while (izquierda < derecha){
+        //aumentar valor de indice al encontrar valor inferior, antes de intercambiar valores
+        if(arr[izquierda] <= pivote){
+            ++indice;
+            swap(arr[indice],arr[izquierda]);
+        }
+        //izquierda sirve como contador y aumenta independientemente de la consulta anterior
+        ++izquierda;
+    }
+    //intercambia con posicion correcta del pivote
+    swap(arr[indice+1],arr[derecha]);
+    //retorna la posicion del pivote
+    return indice+1;
+}
 
+void quickSort (int arr[], int izquierda, int derecha){
+    if (izquierda < derecha){
+        int pivote_indice = particion(arr,izquierda,derecha);
+        quickSort(arr,izquierda,pivote_indice-1);
+        quickSort(arr,pivote_indice+1,derecha);
+    }
 }
 
 int main()
@@ -67,16 +93,22 @@ int main()
     int x[5];
     for (int i=0; i<5; i++)
         cin >> x[i];
+    cout<<endl;
     imprimir (x,5);
+    cout<<endl;
     cout << sumarIterativo(x,5) << endl;
+    cout<<endl;
     cout << sumarRecursivo(x,5) << endl;
+    cout<<endl;
     invertirIterativo(x,5);
     imprimir(x,5);
+    cout<<endl;
     invertirRecursivo(x,5);
     imprimir(x,5);
+    cout<<endl;
     //bubbleSort(x,5);
-    insertionSort(x,5);
-    //quickSort(x,5);
+    //insertionSort(x,5);
+    quickSort(x,0,4);
     imprimir(x,5);
 
     return 0;
