@@ -53,8 +53,8 @@ void invertirRecursivo(int *arr, int tam){
         invertirRecursivo(++arr, tam-2);
     }
 }
-
-void bubbleSort (int arr[], int tam){
+/*
+void bubbleSort (int *arr, int tam){
     while (tam--){
         if (arr > arr+1)
             swap(arr;arr+1);
@@ -66,17 +66,18 @@ void bubbleSort (int arr[], int tam){
         }
     }
 }
-
-void insertionSort (int arr[], int tam){
+*/
+void insertionSort (int *arr, int tam){
     int valorTemporal;
-    for (int i=1; i < tam; i++){
-        valorTemporal = arr[i];
-        int j;
-        //en caso el valor evaluado sea inferior al de la izquierda y aun haya valores que evaluar
-        for (j=i-1; j>=0 && arr[j] > valorTemporal; j--){
-            arr[j+1] = arr[j];
+    int *inicial = arr;
+    while (tam--){
+        valorTemporal = *(++arr);
+        int *ptr2 = arr-1;
+        while (ptr2 >= inicial && *ptr2 > valorTemporal){
+            *(ptr2 + 1) = *ptr2;
+            ptr2--;
         }
-        arr[j+1] = valorTemporal;
+        *ptr2 = valorTemporal;
     }
 }
 
@@ -108,7 +109,7 @@ void quickSort (int arr[], int izquierda, int derecha){
 
 int main()
 {
-    int longitud = 7;
+    int longitud = 5;
     int x[longitud];
     for (int i=0; i<longitud; i++)
         cin >> x[i];
@@ -126,8 +127,8 @@ int main()
     imprimir(x,longitud);
     cout<<endl;
     //bubbleSort(x,longitud);
-    //insertionSort(x,longitud);
-    quickSort(x,0,longitud-1);
+    insertionSort(x,longitud);
+    //quickSort(x,0,longitud-1);
     imprimir(x,longitud);
 
     return 0;
