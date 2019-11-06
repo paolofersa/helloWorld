@@ -8,10 +8,17 @@ using namespace std;
 class Empleado
 {
     public:
-        Empleado(string,string,double);
-        string printNombre();
-        string printApellido();
-        double printSalario();
+        Empleado();
+        ~Empleado();
+        //definir variables
+        void defNombre(string);
+        void defApellido(string);
+        void defSalario(double);
+        //obtener variables
+        string getNombre();
+        string getApellido();
+        double getSalario();
+
         void descontarSalario();
 
     private:

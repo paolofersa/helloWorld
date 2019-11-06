@@ -3,26 +3,33 @@
 
 using namespace std;
 
-Empleado::Empleado(string n, string a, double s)
-{
-    nombre = n;
-    apellido = a;
-    if (s<0)
-        s=0;
-    salario = s;
+Empleado::Empleado(){
+
+}
+Empleado::~Empleado(){
+
+}
+void Empleado::defNombre(string _nombre){
+    nombre = _nombre;
+}
+void Empleado::defApellido(string _apellido){
+    apellido = _apellido;
+}
+void Empleado::defSalario(double _salario){
+    salario = _salario;
 }
 
-string Empleado::printNombre()
+string Empleado::getNombre()
 {
     return nombre;
 }
 
-string Empleado::printApellido()
+string Empleado::getApellido()
 {
     return apellido;
 }
 
-double Empleado::printSalario()
+double Empleado::getSalario()
 {
     return salario;
 }

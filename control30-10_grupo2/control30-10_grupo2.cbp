@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="control_30-10" />
+		<Option title="control30-10_grupo2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/control_30-10" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/control30-10_grupo2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/control_30-10" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/control30-10_grupo2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,14 +34,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Empleado.h" />
+		<Unit filename="include/Curso.h" />
+		<Unit filename="include/Estudiante.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Empleado.cpp" />
+		<Unit filename="src/Curso.cpp" />
+		<Unit filename="src/Estudiante.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
