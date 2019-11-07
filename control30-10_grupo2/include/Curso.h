@@ -1,6 +1,7 @@
 #ifndef CURSO_H
 #define CURSO_H
 #include "Estudiante.h"
+
 #include <iostream>
 
 using namespace std;
@@ -8,13 +9,16 @@ using namespace std;
 class Curso
 {
     public:
-        Curso();
+        Curso(int);
         ~Curso();
+        Curso(Curso(&o));
+        void defEstudiantes();
+        void getEstudiantes();
+        void agregarEstudiante();
 
     private:
-        string nombre;
-        string codigo;
-        int cantidadAlumnos;
+        int cantidadEstudiantes;
+        Estudiante *ptroEstudiante;
 
 };
 

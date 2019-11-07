@@ -7,8 +7,11 @@ using namespace std;
 class Estudiante
 {
     public:
-        Estudiante(string,string,string);
+        Estudiante();
         ~Estudiante();
+        void defNombre(string);
+        void defApellido(string);
+        void defCodigo(string);
         string getNombre();
         string getApellido();
         string getCodigo();

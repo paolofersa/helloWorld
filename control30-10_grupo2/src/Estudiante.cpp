@@ -3,17 +3,31 @@
 
 using namespace std;
 
-Estudiante::Estudiante(string _nombre, string _apellido, string _codigo)
+Estudiante::Estudiante()
 {
-    nombre = _nombre;
-    apellido = _apellido;
-    codigo = _codigo;
+
 }
 
 Estudiante::~Estudiante()
 {
-    //dtor
+
 }
+
+void Estudiante::defNombre(string n)
+{
+    nombre = n;
+}
+
+void Estudiante::defApellido(string a)
+{
+    apellido = a;
+}
+
+void Estudiante::defCodigo(string c)
+{
+    codigo = c;
+}
+
 string Estudiante::getNombre(){
     return nombre;
 }
