@@ -13,7 +13,7 @@ class ArregloEmpleados
         ArregloEmpleados(ArregloEmpleados &o);
         void defEmpleados();
         void getEmpleados();
-        void insertionSort(ArregloEmpleados *, int );
+        void insertionSort();
 
     protected:
 

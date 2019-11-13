@@ -51,18 +51,22 @@ void Curso::getEstudiantes()
 
 void Curso::agregarEstudiante()
 {
-    Estudiante temporal;
+    cantidadEstudiantes++;
+    Estudiante *ptroNuevo = new Estudiante[cantidadEstudiantes];
+    for (int i=0; i < cantidadEstudiantes-1; i++){
+        ptroNuevo[i] = ptroEstudiante[i];
+    }
     cout << "Ingresar nuevo estudiante:" << endl;
     string nom,ape,cod;
     cout << "Nombre:" <<endl;
     cin >>nom;
-    temporal.defNombre(nom);
+    ptroNuevo[cantidadEstudiantes-1].defNombre(nom);
     cout << "Apellido:" <<endl;
     cin >>ape;
-    temporal.defApellido(ape);
+    ptroNuevo[cantidadEstudiantes-1].defApellido(ape);
     cout << "Codigo:" <<endl;
     cin >>cod;
-    temporal.defCodigo(cod);
-    cantidadEstudiantes++;
-
+    ptroNuevo[cantidadEstudiantes-1].defCodigo(cod);
+    delete [] ptroEstudiante;
+    ptroEstudiante = ptroNuevo;
 }

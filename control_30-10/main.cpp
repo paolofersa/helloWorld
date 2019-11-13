@@ -10,7 +10,7 @@ int main()
     ArregloEmpleados a(tamanio);
     a.defEmpleados();
     a.getEmpleados();
-    a.insertionSort(&a,tamanio);
+    a.insertionSort();
     cout << endl;
     a.getEmpleados();
 

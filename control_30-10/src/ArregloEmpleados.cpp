@@ -45,15 +45,15 @@ void ArregloEmpleados::getEmpleados(){
     }
 }
 
-void ArregloEmpleados::insertionSort(ArregloEmpleados *ptro, int tam){
+void ArregloEmpleados::insertionSort(){
     Empleado valorTemporal;
     int j;
     for (int i=1; i < tam; i++){
-        valorTemporal = *(ptro + i);
+        valorTemporal = *(ptroEmpleado + i);
         //en caso el valor evaluado sea inferior al de la izquierda y aun haya valores que evaluar
-        for (j=i-1; j>=0 && *(ptro+j)->getApellido()[0] >valorTemporal.getApellido()[0]; j--){
-            *(ptro+j+1) = *(ptro+j);
+        for (j=i-1; j>=0 && (ptroEmpleado+j)->getApellido() > valorTemporal.getApellido(); j--){
+            *(ptroEmpleado+j+1) = *(ptroEmpleado+j);
         }
-        *(ptro+j+1) = valorTemporal;
+        *(ptroEmpleado+j+1) = valorTemporal;
     }
 }

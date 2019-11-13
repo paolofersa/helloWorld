@@ -10,5 +10,10 @@ int main()
     Curso c1(tamanio);
     c1.defEstudiantes();
     c1.getEstudiantes();
+    cout << endl;
+    c1.agregarEstudiante();
+    c1.getEstudiantes();
+
+    cout << endl;
     return 0;
 }
